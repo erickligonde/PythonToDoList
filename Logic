@@ -1,0 +1,32 @@
+toDoList = []
+
+def add(list):
+    newTask = input("What task would you like to add?\n")
+    list.append(newTask)
+    
+def delete(list):
+    taskIndex = int(input('Please enter the task Number that you would like to delete\n'))
+    taskIndex -= 1
+    list.pop(taskIndex)
+
+def show(list):
+    if len(list) == 0:
+        print("The list is currently empty.")
+    else:
+        for i in range(len(list)):
+            print(f"{i + 1}. {list[i]}")
+
+
+
+print("Welcome to the To Do List")
+while True:
+    inputt = input("What would you like to do? (Type Add, Delete, Show or Exit.)\n").lower()
+    if inputt == 'add':
+        add(toDoList)
+    elif inputt == 'delete':
+        delete(toDoList)
+    elif inputt == 'show':
+        show(toDoList)
+    elif inputt == 'exit':
+        print('Goodbye!')
+        break
